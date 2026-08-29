@@ -14,11 +14,11 @@ df = load_data()
 
 # App Title
 st.title("Smoking Data Analysis")
-st.write("This application visualizes the data analysis results from the `main.ipynb` notebook.")
+st.write("This application visualizes the data analysis results from the [`main.ipynb`](https://colab.research.google.com/drive/1ehjZYkU1qc51EdVp6xR9HbH3O-xkzq3X#scrollTo=797afeb4) notebook.")
 
 # --- Display Dataset ---
 st.header("1. Full Dataset")
-st.write("Complete data from `smoking.csv`:")
+st.write("Complete data from [`smoking.csv`](https://drive.google.com/drive/folders/1KRbSJ_G7LJsG6_saGdbLuYD4is-4Bv8A?usp=sharing):")
 st.dataframe(df)
 
 st.divider()
@@ -38,6 +38,11 @@ ax1.grid(axis='y', linestyle='--', alpha=0.7)
 
 plt.tight_layout()
 st.pyplot(fig1)
+st.markdown("""
+* **Overall Trend:** Non-smokers significantly outnumber smokers across every single gender and marital status category. 
+* **Largest Demographic:** The dataset is heavily dominated by married females and married males, the vast majority of whom do not smoke.
+* **Highest Smoker Count:** Interestingly, despite married individuals being the largest group overall, the highest number of active smokers is found among **Single Females** and **Single Males**.
+* **Proportional Insight:** By comparing the height of the red bars (smokers) to the blue bars (non-smokers), single individuals show a noticeably higher proportion or likelihood of smoking compared to married individuals.""")
 
 st.divider()
 
@@ -65,6 +70,12 @@ ax2.grid(axis='y', linestyle='--', alpha=0.7)
 
 plt.tight_layout()
 st.pyplot(fig2)
+st.markdown("""
+* **Dominant Preference:** "Packets" are the most popular tobacco type for both demographics, peaking significantly at 48 individuals in the 26-40 age group.
+* **Age Group Discrepancy:** The 26-40 years demographic shows a much higher total count of smokers across almost all categories compared to the younger 18-25 group.
+* **Hand-Rolled Trend:** There is a notable jump in the exclusive use of "Hand-Rolled" tobacco among the older demographic (15 users) compared to the younger demographic (only 2 users).
+* **Least Popular Choice:** Mixing habits, particularly leaning towards "Both/Mainly Hand-Rolled", is the least common practice among both age groups.
+""")
 
 st.divider()
 
@@ -101,6 +112,12 @@ ax3.grid(axis='y', linestyle='--', alpha=0.7)
 
 plt.tight_layout()
 st.pyplot(fig3)
+st.markdown("""
+* **Consistent Habits:** The most prevalent smoking behavior is consistency. The top three patterns (20/20, 15/15, and 10/10) indicate that most individuals consume the exact same amount of cigarettes on weekends as they do on weekdays.
+* **Heavy Consumption Peak:** The highest count belongs to the 20 cigarettes per day habit (equivalent to a standard full pack). This is overwhelmingly driven by the 26-40 age group (14 individuals).
+* **Demographic Dominance:** Across every single one of the top 10 patterns, the older 26-40 demographic consistently outnumbers the younger 18-25 group.
+* **Weekend Spikes:** While daily consistency is the norm, there are specific segments (like the "20.0 / 10.0" and "15.0 / 10.0" groups) representing social or leisure smokers who double their consumption during the weekend compared to regular workdays.
+""")
 
 st.divider()
 
@@ -124,3 +141,18 @@ ax4.grid(axis='y', linestyle='--', alpha=0.7)
 
 plt.tight_layout()
 st.pyplot(fig4)
+st.markdown("""
+* **Income Disparity:** There is a notable inverse relationship between the represented income brackets and the prevalence of smoking. 
+* **Lower Income Peak:** The lower-income bracket (5,200 to 10,400) harbors a higher absolute number of active smokers (107 individuals).
+* **Higher Income Drop:** As gross income moves up into the next bracket (10,400 to 15,600), the number of smokers noticeably drops to 83 individuals, suggesting a potential correlation between lower socioeconomic status and higher smoking rates within this specific data slice.
+""")
+
+st.divider()
+
+st.header("Summary")
+st.write("""
+* **Demographic Vulnerability:** While married individuals make up the majority of the dataset, single individuals exhibit a proportionally higher tendency to smoke.
+* **Consumption Habits:** Smokers generally maintain consistent habits throughout the week, with 20 cigarettes per day being the most common peak, especially among the 26-40 age group.
+* **Product Preference:** "Packets" completely dominate the market preference across all observed age groups, while "Hand-Rolled" remains a niche choice.
+* **Socioeconomic Correlation:** The data suggests an inverse relationship between income and smoking prevalence, with the lower-income bracket (5,200 to 10,400) containing the highest absolute number of smokers.
+""")
